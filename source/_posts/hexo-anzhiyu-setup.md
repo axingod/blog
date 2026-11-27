@@ -2,7 +2,7 @@
 title: Hexo 博客从零搭建实录：Windows + AnzhiYu + GitHub Pages
 date: 2026-11-26 21:30:00
 categories:
-  - 技术
+  - 实用项目
 tags:
   - Hexo
   - 建站

@@ -1036,11 +1036,16 @@ home_top:
   subTitle: 记录学习与生活。
   siteText: panghu.langzixin.dpdns.org
   category:
-    - name: 技术
-      path: /categories/技术/
+    - name: 实用项目
+      path: /categories/实用项目/
       shadow: var(--anzhiyu-shadow-blue)
       class: blue
       icon: anzhiyu-icon-dove
+    - name: 实用软件
+      path: /categories/实用软件/
+      shadow: 0 8px 12px -3px rgba(140, 100, 255, 0.25)
+      class: purple
+      icon: anzhiyu-icon-cube
     - name: 生活
       path: /categories/生活/
       shadow: var(--anzhiyu-shadow-red)

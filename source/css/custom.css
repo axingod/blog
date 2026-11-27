@@ -134,3 +134,25 @@
   font-family: "YingxiongTi", "PingFang SC", "Microsoft YaHei", sans-serif !important;
   letter-spacing: 2px;
 }
+
+/* 首页分类卡：改成四项 + 「实用软件」紫色系 */
+#bannerGroup .categoryItem {
+  width: calc(100% / 4 - 0.42rem);
+}
+#bannerGroup .categoryItem:hover {
+  width: 32%;
+}
+a.categoryButton.purple {
+  background: linear-gradient(to right, #8b6cff, #c46bff);
+  background-size: 200%;
+}
+a.categoryButton.purple:hover,
+a.categoryButton.blue:hover,
+a.categoryButton.red:hover,
+a.categoryButton.green:hover {
+  background-position: 100% 0;
+}
+[data-theme="dark"] a.categoryButton.purple {
+  background: linear-gradient(to right, #5a3fd0, #9a3fd0);
+  background-size: 200%;
+}

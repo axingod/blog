@@ -2,7 +2,7 @@
 title: Twikoo 评论系统白嫖部署：Cloudflare Workers + D1
 date: 2026-11-25 22:10:00
 categories:
-  - 技术
+  - 实用项目
 tags:
   - Twikoo
   - Cloudflare

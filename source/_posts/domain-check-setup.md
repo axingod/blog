@@ -2,7 +2,7 @@
 title: 给域名装个到期监控：Worker + KV 免费方案
 date: 2026-11-28 12:00:00
 categories:
-  - 技术
+  - 实用项目
 tags:
   - Cloudflare
   - 域名
