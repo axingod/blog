@@ -5,7 +5,7 @@ categories:
   - 生活
 tags:
   - 随笔
-cover: https://panghu.langzixin.dpdns.org/img/cover/night-coding-v6.jpg
+cover: https://panghu.langzixin.dpdns.org/img/cover/night-coding-v7.jpg
 description: 白天写不完的东西，总在深夜长出来。随笔一则。
 ---
 
