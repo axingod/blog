@@ -7,7 +7,7 @@ tags:
   - Twikoo
   - Cloudflare
   - 建站
-cover: https://panghu.langzixin.dpdns.org/img/cover/twikoo-v5.jpg
+cover: https://panghu.langzixin.dpdns.org/img/cover/twikoo-v6.jpg
 description: 静态博客也能有评论区。用 Cloudflare 的免费额度跑 Twikoo，不花一分钱，留言直接写进数据库。
 ---
 

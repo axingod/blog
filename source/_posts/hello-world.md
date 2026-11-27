@@ -6,7 +6,7 @@ categories:
 tags:
   - Hexo
   - 建站
-cover: https://panghu.langzixin.dpdns.org/img/cover/hello-world-v5.jpg
+cover: https://panghu.langzixin.dpdns.org/img/cover/hello-world-v6.jpg
 description: 折腾了一晚上，这个博客终于上线了。这是第一篇，留个位置。
 ---
 
