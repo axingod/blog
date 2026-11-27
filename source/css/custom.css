@@ -136,14 +136,14 @@
 }
 /* 文章大标题：压掉刺眼的纯白，改冷调米白，桌面端略放大 */
 #post-info h1.post-title {
-  color: #ffffff !important;
+  color: #c3cfe0 !important;
   letter-spacing: 1px !important;
   text-wrap: balance;
   -webkit-text-stroke: 0;
   text-shadow:
-    1px 0 0 #101319, -1px 0 0 #101319, 0 1px 0 #101319, 0 -1px 0 #101319,
-    0.8px 0.8px 0 #101319, -0.8px -0.8px 0 #101319, 0.8px -0.8px 0 #101319, -0.8px 0.8px 0 #101319,
-    0 3px 16px rgba(0, 0, 0, 0.5);
+    0.7px 0 0 #14181f, -0.7px 0 0 #14181f, 0 0.7px 0 #14181f, 0 -0.7px 0 #14181f,
+    0.5px 0.5px 0 #14181f, -0.5px -0.5px 0 #14181f, 0.5px -0.5px 0 #14181f, -0.5px 0.5px 0 #14181f,
+    0 3px 14px rgba(0, 0, 0, 0.45);
 }
 @media (min-width: 769px) {
   #post-info h1.post-title {
