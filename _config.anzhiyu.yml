@@ -795,7 +795,7 @@ aside:
 
   card_announcement:
     enable: true
-    content: 这里是胖虎的个人博客，记录建站折腾、技术笔记和生活随笔。文章下面可以直接留言，欢迎常来逛逛～
+    content: 我是胖虎，一个还在打基础的小白。这里记我折腾建站、学写代码的过程，也放点生活随笔。水平有限，写错的地方欢迎在评论区指正，有想聊的随时留言。一起慢慢来，一起往前挪。
   card_weixin:
     enable: false
     face: https://bu.dusays.com/2023/01/13/63c02edf44033.png
