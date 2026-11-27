@@ -642,8 +642,8 @@ index_top_img_height: 520px
 # The user interface setting of category and tag page (category和tag页的UI设置)
 # index - same as Homepage UI (index 值代表 UI将与首页的UI一样)
 # default - same as archives UI 默认跟archives页面UI一样
-category_ui: # 留空或 index
-tag_ui: # 留空或 index
+category_ui: index # 留空或 index
+tag_ui: index # 留空或 index
 
 # Footer Background
 footer_bg: false
