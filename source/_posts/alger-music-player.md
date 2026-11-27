@@ -8,7 +8,7 @@ tags:
   - Electron
   - Vue3
   - 开源软件
-cover: https://panghu.langzixin.dpdns.org/img/cover/music-player-v8.jpg
+cover: https://panghu.langzixin.dpdns.org/img/cover/music-player-v9.jpg
 description: 一个开源的第三方网易云桌面客户端，Electron + Vue3 写成，自带桌面歌词、EQ 和本地音源服务。这篇记录它长什么样、怎么装、源码怎么跑起来。
 ---
 

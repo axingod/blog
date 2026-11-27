@@ -7,7 +7,7 @@ tags:
   - Cloudflare
   - 域名
   - 工具
-cover: https://panghu.langzixin.dpdns.org/img/cover/domain-check-v8.jpg
+cover: https://panghu.langzixin.dpdns.org/img/cover/domain-check-v9.jpg
 description: 域名一多，续费全靠自觉。这份教程把 domain-check 这套 Worker + KV 的到期监控台，从 Fork 一路部署到 Telegram 提醒，全程不用一台服务器。
 ---
 

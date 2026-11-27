@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><style>
+@font-face{font-family:"F";src:url("cover-font-zt.ttf") format("truetype");}
+html,body{width:1536px;height:864px;margin:0;padding:0;overflow:hidden;}
+body{background:linear-gradient(140deg,#ffe3c8 0%,#ffd9e6 44%,#e2dbff 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;perspective:1200px;}
+body::before{content:"";position:absolute;inset:-80px;background:
+ radial-gradient(460px 340px at 12% 18%,rgba(255,255,255,.88),transparent 70%),
+ radial-gradient(540px 380px at 88% 76%,rgba(255,190,130,.70),transparent 70%),
+ radial-gradient(360px 280px at 70% 8%,rgba(160,210,255,.62),transparent 70%);}
+.block{transform-origin:50% 50%;transform:translateY(-6px) scaleX(1.10) perspective(1400px) rotateX(8deg);display:flex;flex-direction:column;align-items:center;z-index:2;}
+.row{position:relative;line-height:1.2;white-space:nowrap;transform-origin:50% 50%;}
+.s1{font-family:"F",serif;font-size:250px;color:#fff;-webkit-text-stroke:15px #fff;letter-spacing:4px;display:block;white-space:nowrap;filter:drop-shadow(0 14px 18px rgba(30,40,90,.32));}
+.f1{position:absolute;left:0;top:0;font-family:"F",serif;font-size:250px;letter-spacing:4px;display:block;white-space:nowrap;width:100%;}
+.row.m2{margin-top:16px;}
+.s2{font-family:"F",serif;font-size:92px;color:#fff;-webkit-text-stroke:8px #fff;letter-spacing:3px;display:block;white-space:nowrap;filter:drop-shadow(0 8px 14px rgba(30,40,90,.28));}
+.f2{position:absolute;left:0;top:0;font-family:"F",serif;font-size:92px;color:#FF6A00;letter-spacing:3px;display:block;white-space:nowrap;}
+.row.m3{margin-top:26px;}
+.t3{font-family:"F",serif;font-size:46px;color:#3A3358;letter-spacing:2px;display:block;white-space:nowrap;text-shadow:0 2px 0 rgba(255,255,255,.95),0 0 18px rgba(255,255,255,.9);}
+.row.m4{margin-top:22px;}
+.t4{font-family:"F",serif;font-size:32px;color:#5A4E78;letter-spacing:1px;display:block;white-space:nowrap;text-shadow:0 1px 0 rgba(255,255,255,.95);}
+</style></head><body>
+<div class="block">
+<div class="row m1"><span class="s1">Hexo AnzhiYu</span><span class="f1"><span style="color:#FF9F0A;">H</span><span style="color:#FF5E3A;">e</span><span style="color:#5E5CE6;">x</span><span style="color:#30D158;">o</span>&nbsp;<span style="color:#FF5E3A;">A</span><span style="color:#5E5CE6;">n</span><span style="color:#30D158;">z</span><span style="color:#FF9F0A;">h</span><span style="color:#FF5E3A;">i</span><span style="color:#5E5CE6;">Y</span><span style="color:#30D158;">u</span></span></div>
+<div class="row m2"><span class="s2">Windows 本地建站实录</span><span class="f2">Windows 本地建站实录</span></div>
+<div class="row m3"><span class="t3">Hexo 8 · AnzhiYu 主题 · GitHub Pages</span></div>
+<div class="row m4"><span class="t4">本地预览 · 一键部署 · 自定义 CSS · 无需服务器</span></div>
+</div>
+<script>
+window.addEventListener('load', function(){
+  var TARGET = 1250;
+  document.querySelectorAll('.row').forEach(function(row){
+    var w = row.offsetWidth; if(!w) return;
+    var k = TARGET / w;
+    if(row.querySelector('.s1')){
+      var spans = row.querySelectorAll('span');
+      var fs = parseFloat(getComputedStyle(row.querySelector('.s1')).fontSize);
+      spans.forEach(function(s){
+        s.style.fontSize = (fs * k) + 'px';
+        s.style.webkitTextStroke = (Math.max(6, 15 * k)) + 'px #fff';
+      });
+      var w2 = row.offsetWidth;
+      if(w2 > 0){
+        var k2 = TARGET / w2;
+        spans.forEach(function(s){
+          s.style.fontSize = (fs * k * k2) + 'px';
+          s.style.webkitTextStroke = (Math.max(6, 15 * k * k2)) + 'px #fff';
+        });
+      }
+    } else {
+      row.style.transform = 'scaleX(' + k + ')';
+    }
+  });
+  var blk = document.querySelector('.block');
+  var r = blk.getBoundingClientRect();
+  if(r.height > 730){
+    var sc = 730 / r.height;
+    blk.style.transform = 'translateY(-6px) scaleX(1.10) perspective(1400px) rotateX(8deg) scale(' + sc + ')';
+  }
+});
+</script>
+</body></html>
