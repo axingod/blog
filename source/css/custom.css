@@ -73,14 +73,14 @@
   font-size: 4.7cqw;
   line-height: 1.38;
   font-weight: 800;
-  color: #f4f8ff;
+  color: #c9d4e5;
   letter-spacing: 0.04em;
-  text-shadow: 0 6px 22px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.55);
 }
 #bh-layer .bh-txt p {
   margin: 1.4cqw 0 0;
   font-size: 1.6cqw;
-  color: #93a6c4;
+  color: #8b9cb8;
   letter-spacing: 0.04em;
 }
 #bh-layer .bh-ico {
