@@ -7,7 +7,7 @@ tags:
   - Hexo
   - 建站
   - GitHub Pages
-cover: https://panghu.langzixin.dpdns.org/blog/img/cover/star-lake.jpg
+cover: https://panghu.langzixin.dpdns.org/img/cover/star-lake.jpg
 description: 一台 Windows 电脑、一个 GitHub 账号，零成本把博客搭起来并推到线上，顺手记录几个真踩过的坑。
 ---
 
