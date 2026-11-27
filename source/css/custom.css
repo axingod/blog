@@ -199,7 +199,16 @@ a.categoryButton.green:hover {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  -webkit-text-fill-color: transparent;
   animation: bhFlow 6s linear infinite;
+}
+/* 不支持渐变裁字时退回单色，避免文字整片透明 */
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  #catalog-list .bh-mq-track span {
+    background: none;
+    color: #7cc4ff;
+    -webkit-text-fill-color: #7cc4ff;
+  }
 }
 @keyframes bhMarq {
   from { transform: translateX(0); }
