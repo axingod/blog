@@ -261,3 +261,12 @@ a.categoryButton.green:hover {
 #todayCard .todayCard-info { z-index: 3; }
 #todayCard .todayCard-cover { z-index: 0; }
 #todayCard .banner-button-group { z-index: 3; }
+
+/* 关于卡片换成深色渐变底，人物作主视觉 */
+#todayCard {
+  background:
+    radial-gradient(circle at 82% 82%, rgba(255, 170, 70, 0.22), transparent 58%),
+    radial-gradient(circle at 14% 16%, rgba(110, 165, 255, 0.18), transparent 52%),
+    linear-gradient(135deg, #212936 0%, #2b3546 52%, #3a2f28 100%) !important;
+}
+#todayCard .todayCard-cover { display: none !important; }
