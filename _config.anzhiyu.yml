@@ -798,10 +798,10 @@ aside:
     name_link: /
 
   card_announcement:
-    enable: false
-    content: 欢迎来看我的博客鸭~
-  card_weixin:
     enable: true
+    content: 这里是胖虎的个人博客，记录建站折腾、技术笔记和生活随笔。文章下面可以直接留言，欢迎常来逛逛～
+  card_weixin:
+    enable: false
     face: https://bu.dusays.com/2023/01/13/63c02edf44033.png
     backFace: https://bu.dusays.com/2023/05/13/645fa415e8694.png
   card_recent_post:
