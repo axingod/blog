@@ -341,7 +341,7 @@ waline:
 # Twikoo
 # https://github.com/imaegoo/twikoo
 twikoo:
-  envId: https://twikoo-cloudflare.panghunb.workers.dev
+  envId: https://twikoo.langzixin.dpdns.org
   region:
   visitor: false
   option:
