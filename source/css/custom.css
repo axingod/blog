@@ -549,3 +549,122 @@ body:not(:has(#home_top)) #bh-layer { display: none !important; }
     margin-bottom: 6px !important;
   }
 }
+
+/* ===== 手机端：去掉顶部重复的 5 篇文章卡，改为胖虎跳舞小卡 ===== */
+@media screen and (max-width: 768px) {
+  #bannerGroup .topGroup {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    flex: none !important;
+    margin: 12px 0 0 !important;
+    overflow: visible !important;
+  }
+  #bannerGroup .topGroup > .recent-post-item { display: none !important; }
+  #bannerGroup .topGroup .swiper_container_card,
+  #bannerGroup .topGroup .swiper-wrapper { overflow: visible !important; }
+  #todayCard {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: 172px !important;
+    margin: 0 !important;
+    float: none !important;
+    border-radius: 14px !important;
+  }
+  #todayCard .todayCard-info { left: 16px !important; bottom: 14px !important; max-width: 62% !important; }
+  #todayCard::before {
+    height: 100% !important;
+    background-size: auto 100% !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #bannerGroup .topGroup .todayCard {
+    position: relative !important;
+    display: block !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 172px !important;
+    z-index: 1 !important;
+  }
+  #bannerGroup .topGroup { position: static !important; }
+}
+
+/* 修正：topGroup 与 bannerGroup 是兄弟节点，选择器不带 #bannerGroup */
+@media screen and (max-width: 768px) {
+  .swiper_container_card {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  .topGroup {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 12px 0 0 !important;
+  }
+  .topGroup .recent-post-item { display: none !important; }
+  .topGroup .todayCard {
+    display: block !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 168px !important;
+    margin: 0 !important;
+  }
+}
+
+/* 手机端分类卡改 2×2，节省纵向空间 */
+@media screen and (max-width: 768px) {
+  .categoryGroup {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-auto-rows: 82px !important;
+    gap: 10px !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  .categoryGroup .categoryItem {
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: 100% !important;
+    margin: 0 !important;
+  }
+  .categoryGroup .categoryItem:nth-child(3) { display: block !important; }
+  .topGroup .todayCard { height: 150px !important; }
+  .topGroup .todayCard .todayCard-info { bottom: 10px !important; left: 14px !important; }
+  .topGroup .todayCard .todayCard-info .todayCard-title { font-size: 22px !important; line-height: 28px !important; }
+}
+
+@media screen and (max-width: 768px) {
+  #bannerGroup .categoryGroup,
+  div#bannerGroup .categoryGroup {
+    display: grid !important;
+    flex-direction: unset !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-auto-rows: 82px !important;
+    gap: 10px !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  #bannerGroup .categoryGroup .categoryItem {
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: 100% !important;
+    margin: 0 !important;
+  }
+  .topGroup .todayCard .todayCard-info {
+    background: linear-gradient(to top, rgba(0,0,0,.75) 0%, rgba(0,0,0,0) 100%) !important;
+    padding: 10px 12px !important;
+    border-radius: 10px !important;
+  }
+}
