@@ -1041,12 +1041,12 @@ home_top:
   siteText: axingod.github.io
   category:
     - name: 技术
-      path: /categories/
+      path: /categories/技术/
       shadow: var(--anzhiyu-shadow-blue)
       class: blue
       icon: anzhiyu-icon-dove
     - name: 生活
-      path: /categories/
+      path: /categories/生活/
       shadow: var(--anzhiyu-shadow-red)
       class: red
       icon: anzhiyu-icon-fire
