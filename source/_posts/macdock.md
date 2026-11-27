@@ -8,7 +8,7 @@ tags:
   - 桌面美化
   - C++
   - 开源软件
-cover: https://panghu.langzixin.dpdns.org/img/cover/macdock-v8.jpg
+cover: https://panghu.langzixin.dpdns.org/img/cover/macdock-v9.jpg
 description: 一个纯 C++20 写的 Windows 桌面套件，核心只有 1.48MB，静止 0% CPU，把 macOS 的 Dock、灵动岛、台前调度、控制中心整套搬到 Windows 上。这篇记录它长什么样、怎么装、源码怎么编。
 ---
 
