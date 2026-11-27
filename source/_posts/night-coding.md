@@ -6,7 +6,7 @@ categories:
 tags:
   - 随笔
   - 生活
-cover: /blog/img/cover/night-desk.jpg
+cover: https://axingod.github.io/blog/img/cover/night-desk.jpg
 description: 白天写不完的东西，总在深夜长出来。随笔一则。
 ---
 

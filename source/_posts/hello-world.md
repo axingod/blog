@@ -6,7 +6,7 @@ categories:
 tags:
   - Hexo
   - 建站
-cover: /blog/img/banner.jpg
+cover: https://axingod.github.io/blog/img/banner.jpg
 description: 折腾了一晚上，这个博客终于上线了。这是第一篇，留个位置。
 ---
 
