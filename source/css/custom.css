@@ -43,3 +43,20 @@
 #todayCard .todayCard-tips {
   text-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
 }
+
+/* ===== 文章大标题字体（武汉英雄体，正文小标题保持黑体）===== */
+@font-face{
+  font-family: "ZiyouTi";
+  src: url("/fonts/zt-ziyou.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face{
+  font-family: "YingxiongTi";
+  src: url("/fonts/wh-yingxiong.ttf") format("truetype");
+  font-display: swap;
+}
+#post-info h1,
+#article-container h1 {
+  font-family: "YingxiongTi", "PingFang SC", "Microsoft YaHei", sans-serif !important;
+  letter-spacing: 2px;
+}
