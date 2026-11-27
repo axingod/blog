@@ -795,7 +795,7 @@ aside:
 
   card_announcement:
     enable: true
-    content: 我是胖虎，一个还在打基础的小白。这里记我折腾建站、学写代码的过程，也放点生活随笔。水平有限，写错的地方欢迎在评论区指正，有想聊的随时留言。一起慢慢来，一起往前挪。
+    content: 本站所有项目都取自 GitHub 上的开源项目，仅用于个人学习，不作商业用途，版权归原作者所有。如有侵权，请留言告知，我会第一时间处理。
   card_weixin:
     enable: false
     face: https://bu.dusays.com/2023/01/13/63c02edf44033.png
