@@ -7,7 +7,7 @@ tags:
   - Twikoo
   - Cloudflare
   - 建站
-cover: https://axingod.github.io/blog/img/cover/neon-city.jpg
+cover: https://panghu.langzixin.dpdns.org/blog/img/cover/neon-city.jpg
 description: 静态博客也能有评论区。用 Cloudflare 的免费额度跑 Twikoo，不花一分钱，留言直接写进数据库。
 ---
 

@@ -1033,7 +1033,7 @@ home_top:
   timemode: date #date/updated
   title: wulitou胖虎博客
   subTitle: 记录学习与生活。
-  siteText: axingod.github.io
+  siteText: panghu.langzixin.dpdns.org
   category:
     - name: 技术
       path: /categories/技术/
