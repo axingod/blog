@@ -130,7 +130,7 @@ avatar:
 disable_top_img: false
 
 # The banner image of home page
-index_img: "background: url(/img/banner.jpg) top center / cover no-repeat"
+index_img: false
 
 # If the banner of page not setting, it will show the top_img
 default_top_img: /img/banner.jpg
@@ -1059,7 +1059,7 @@ home_top:
   banner:
     tips: 关于本站
     title: 认识一下胖虎
-    image: /img/banner.jpg
+    image: /img/today-card.jpg
     link: /about/
 
 # 朋友圈配置
@@ -1221,7 +1221,7 @@ dynamicEffect:
 inject:
   head:
     # 自定义css
-    # - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
+    - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
 
   bottom:
     # 自定义js

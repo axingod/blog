@@ -1,0 +1,45 @@
+/* 首页左上「随便逛逛」引导卡：暖橙渐变背景 + 常显白色文字 */
+#random-banner {
+  background: url('/img/home-random.jpg') center / cover no-repeat !important;
+  border-radius: 18px;
+  overflow: hidden;
+}
+#random-banner #peoplecanvas {
+  opacity: 0.15;
+}
+/* 主题默认让这层 hover 才显示，这里改成常显 */
+#random-banner #random-hover {
+  opacity: 1 !important;
+  background: transparent !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  padding: 0 0 2.2rem 2.4rem !important;
+  justify-content: flex-end !important;
+  align-items: flex-start !important;
+  color: #fff !important;
+}
+#random-banner #random-hover:hover {
+  background: transparent !important;
+  padding: 0 0 2.2rem 2.4rem !important;
+}
+#random-banner #random-hover > i {
+  font-size: 3rem !important;
+  margin: 0 0 0.7rem 0 !important;
+  line-height: 1 !important;
+  text-shadow: 0 6px 22px rgba(150, 70, 0, 0.45);
+}
+#random-banner #random-hover .bannerText {
+  font-size: 2.6rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  text-shadow: 0 8px 26px rgba(150, 70, 0, 0.45) !important;
+}
+#random-banner #random-hover .bannerText i {
+  font-size: 2rem !important;
+}
+
+/* 首页右上「认识一下胖虎」卡：图上文字加一点可读性 */
+#todayCard .todayCard-title,
+#todayCard .todayCard-tips {
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
