@@ -1,41 +1,115 @@
-/* 首页左上「随便逛逛」引导卡：暖橙渐变背景 + 常显白色文字 */
+/* 首页左上「随便逛逛」引导卡：深色星空 + 漂浮图标群 */
 #random-banner {
-  background: url('/img/home-random.jpg') center / cover no-repeat !important;
+  position: relative;
+  container-type: inline-size;
   border-radius: 18px;
   overflow: hidden;
+  background:
+    radial-gradient(64% 120% at 76% 10%, #1d3a6b 0%, rgba(29, 58, 107, 0) 62%),
+    radial-gradient(48% 92% at 6% 98%, #123a55 0%, rgba(18, 58, 85, 0) 70%),
+    linear-gradient(120deg, #0a0e15 0%, #0f1826 48%, #101b2d 100%) !important;
+}
+#random-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1.6px 1.6px at 12% 26%, #fff, transparent),
+    radial-gradient(1.2px 1.2px at 22% 68%, #cfe3ff, transparent),
+    radial-gradient(1.8px 1.8px at 31% 14%, #fff, transparent),
+    radial-gradient(1.3px 1.3px at 38% 82%, #dbeafe, transparent),
+    radial-gradient(1.1px 1.1px at 46% 44%, #fff, transparent),
+    radial-gradient(1.7px 1.7px at 52% 76%, #cfe3ff, transparent),
+    radial-gradient(1.2px 1.2px at 58% 22%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 64% 58%, #dbeafe, transparent),
+    radial-gradient(1.1px 1.1px at 71% 34%, #fff, transparent),
+    radial-gradient(1.9px 1.9px at 77% 64%, #cfe3ff, transparent),
+    radial-gradient(1.2px 1.2px at 84% 42%, #fff, transparent),
+    radial-gradient(1.4px 1.4px at 91% 78%, #dbeafe, transparent),
+    radial-gradient(1.1px 1.1px at 96% 30%, #fff, transparent),
+    radial-gradient(1.3px 1.3px at 6% 52%, #cfe3ff, transparent);
+  opacity: 0.85;
 }
 #random-banner #peoplecanvas {
-  opacity: 0.15;
+  opacity: 0.3;
 }
-/* 主题默认让这层 hover 才显示，这里改成常显 */
+/* 原「随便逛逛」文字层：隐藏内容，保留整块点击跳随机文章 */
 #random-banner #random-hover {
-  opacity: 1 !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 9 !important;
+  opacity: 0 !important;
+  padding: 0 !important;
   background: transparent !important;
   -webkit-backdrop-filter: none !important;
   backdrop-filter: none !important;
-  padding: 0 0 2.2rem 2.4rem !important;
-  justify-content: flex-end !important;
-  align-items: flex-start !important;
   color: #fff !important;
 }
 #random-banner #random-hover:hover {
   background: transparent !important;
-  padding: 0 0 2.2rem 2.4rem !important;
+  padding: 0 !important;
 }
-#random-banner #random-hover > i {
-  font-size: 3rem !important;
-  margin: 0 0 0.7rem 0 !important;
-  line-height: 1 !important;
-  text-shadow: 0 6px 22px rgba(150, 70, 0, 0.45);
-}
+#random-banner #random-hover > i,
 #random-banner #random-hover .bannerText {
-  font-size: 2.6rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 2px !important;
-  text-shadow: 0 8px 26px rgba(150, 70, 0, 0.45) !important;
+  display: none !important;
 }
-#random-banner #random-hover .bannerText i {
-  font-size: 2rem !important;
+/* 星空横幅内容层 */
+#bh-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  overflow: hidden;
+}
+#bh-layer .bh-txt {
+  position: absolute;
+  left: 4.8cqw;
+  top: 19%;
+}
+#bh-layer .bh-txt h2 {
+  margin: 0;
+  font-family: "YingxiongTi", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 4.7cqw;
+  line-height: 1.38;
+  font-weight: 800;
+  color: #f4f8ff;
+  letter-spacing: 0.04em;
+  text-shadow: 0 6px 22px rgba(0, 0, 0, 0.6);
+}
+#bh-layer .bh-txt p {
+  margin: 1.4cqw 0 0;
+  font-size: 1.6cqw;
+  color: #93a6c4;
+  letter-spacing: 0.04em;
+}
+#bh-layer .bh-ico {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: calc(var(--s) * 1cqw);
+  height: calc(var(--s) * 1cqw);
+  border-radius: 26%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  box-shadow: 0 1.8cqw 3.6cqw rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  animation: bhFloat var(--d, 6.4s) ease-in-out infinite;
+  animation-delay: var(--dl, 0s);
+}
+#bh-layer .bh-ico img {
+  width: 56%;
+  height: 56%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.22));
+}
+@keyframes bhFloat {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { transform: translateY(-1.3cqw) rotate(calc(var(--r, 0deg) + 2deg)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #bh-layer .bh-ico { animation: none; }
 }
 
 /* 首页右上「认识一下胖虎」卡：图上文字加一点可读性 */
