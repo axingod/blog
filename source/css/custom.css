@@ -269,3 +269,6 @@ a.categoryButton.green:hover {
     linear-gradient(135deg, #212936 0%, #2b3546 52%, #3a2f28 100%) !important;
 }
 #todayCard .todayCard-cover { display: none !important; }
+
+/* 星空横幅图标层只在本页存在 #home_top 时显示，避免泄漏到文章页 */
+body:not(:has(#home_top)) #bh-layer { display: none !important; }
