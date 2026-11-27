@@ -103,3 +103,18 @@ theme: anzhiyu
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+# Sitemap
+sitemap:
+  path: sitemap.xml
+  rel: false
+
+# RSS
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: https://panghu.langzixin.dpdns.org/img/avatar.jpg
