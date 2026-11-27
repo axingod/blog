@@ -1015,10 +1015,10 @@ pwa:
   manifest: /manifest.json
   theme_color: var(--anzhiyu-main)
   mask_icon: /img/siteicon/apple-icon-180.png
-  apple_touch_icon: /img/siteicon/apple-icon-180.png
-  bookmark_icon: /img/siteicon/apple-icon-180.png
-  favicon_32_32: /img/siteicon/32.png
-  favicon_16_16: /img/siteicon/16.png
+  apple_touch_icon: /img/avatar.jpg
+  bookmark_icon: /img/avatar.jpg
+  favicon_32_32: /img/siteicon_32.png
+  favicon_16_16: /img/siteicon_16.png
 
 # Open graph meta tags
 # https://developers.facebook.com/docs/sharing/webmasters/
