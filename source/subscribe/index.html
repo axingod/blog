@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>RSS 订阅 · wulitou胖虎博客</title>
+<meta name="description" content="wulitou胖虎博客的 RSS 订阅源与最新文章列表。" />
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;padding:36px 16px;background:#f4f6fa;color:#2b333f;
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+       -webkit-font-smoothing:antialiased}
+  .card{max-width:760px;margin:0 auto;background:#fff;border-radius:18px;padding:30px 30px 22px;
+        box-shadow:0 8px 28px rgba(31,45,70,.07)}
+  header{display:flex;align-items:center;gap:16px}
+  .avatar{width:62px;height:62px;border-radius:50%;object-fit:cover;flex:0 0 auto;
+          box-shadow:0 3px 10px rgba(31,45,70,.14)}
+  h1{font-size:19px;margin:0;line-height:1.4}
+  .sub{margin:5px 0 0;font-size:12.5px;color:#8b95a3}
+  .hint{margin-top:20px;padding:12px 14px;border-radius:11px;background:#f1f5ff;
+        font-size:12.5px;color:#4c5a70;line-height:1.9}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;
+       background:#e3eaff;color:#2b46c9;padding:3px 7px;border-radius:6px;word-break:break-all}
+  .feedline{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:9px}
+  .feedline code{flex:1 1 auto;min-width:0}
+  .copy{margin-left:2px;border:none;background:#425AEF;color:#fff;font-size:12px;padding:5px 11px;
+        border-radius:7px;cursor:pointer}
+  .copy:hover{background:#3349cc}
+  .list{list-style:none;margin:26px 0 0;padding:0}
+  .item{padding:19px 0;border-top:1px solid #edf0f5}
+  .item:first-child{border-top:none;padding-top:6px}
+  .date{font-size:11.5px;color:#a3adba;letter-spacing:.5px}
+  a.title{display:block;margin:7px 0 0;font-size:16px;font-weight:600;color:#1d2531;text-decoration:none}
+  a.title:hover{color:#425AEF}
+  .sum{margin:7px 0 0;font-size:13px;line-height:1.75;color:#6d7887}
+  .chips{margin-top:9px}
+  .chip{display:inline-block;margin:0 6px 4px 0;padding:2px 8px;border-radius:999px;
+        font-size:11px;color:#425AEF;background:#eef2ff}
+  .state{padding:22px 0;color:#9aa5b1;font-size:13px;text-align:center}
+  footer{margin-top:24px;padding-top:16px;border-top:1px solid #edf0f5;
+         font-size:12px;color:#a3adba;text-align:center;line-height:1.9}
+  footer a{color:#425AEF;text-decoration:none}
+  @media (max-width:520px){body{padding:18px 12px}.card{padding:20px 18px;border-radius:14px}
+    .avatar{width:52px;height:52px}h1{font-size:17px}}
+  @media (prefers-color-scheme:dark){
+    body{background:#0e1116;color:#d5dae2}
+    .card{background:#171b22;box-shadow:none}
+    a.title{color:#e6eaf0}a.title:hover{color:#8fa8ff}
+    .item{border-color:#232936}footer{border-color:#232936}
+    .sub,.date,footer{color:#6f7a89}
+    .hint{background:#1b2434;color:#9aacc6}
+    code{background:#222c40;color:#a9bcff}
+    .sum{color:#8d97a6}
+    .chip{background:#1d2640;color:#95abff}
+    .state{color:#6f7a89}
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <header>
+      <img class="avatar" src="/img/avatar.jpg" alt="站点头像" />
+      <div>
+        <h1 id="siteTitle">wulitou胖虎博客</h1>
+        <p class="sub">RSS 订阅源 · <span id="countText">读取中…</span></p>
+      </div>
+    </header>
+
+    <div class="hint">
+      这是给 RSS 阅读器用的订阅地址。用 Feedly、Inoreader、Reeder 等阅读器订阅下面这条链接，新文章会自动推送：
+      <div class="feedline">
+        <code id="feedUrl">https://panghu.langzixin.dpdns.org/atom.xml</code>
+        <button class="copy" id="copyBtn" type="button">复制</button>
+      </div>
+    </div>
+
+    <ul class="list" id="list">
+      <li class="state">正在读取订阅内容…</li>
+    </ul>
+
+    <footer>
+      <a href="/">← 返回博客首页</a><br />
+      订阅源由 Hexo 生成 · 用阅读器订阅体验更好
+    </footer>
+  </div>
+
+<script>
+(function () {
+  var NS = 'http://www.w3.org/2005/Atom';
+  var FEED_PATH = '/atom.xml';
+  var feedUrl = new URL(FEED_PATH, location.origin).href;
+  var list = document.getElementById('list');
+  var countText = document.getElementById('countText');
+  var feedCode = document.getElementById('feedUrl');
+  var copyBtn = document.getElementById('copyBtn');
+
+  feedCode.textContent = feedUrl;
+
+  function firstChild(el, name) {
+    if (!el) return null;
+    var items = el.getElementsByTagNameNS(NS, name);
+    return items && items.length ? items[0] : null;
+  }
+
+  function textOf(el, name) {
+    var node = firstChild(el, name);
+    return node ? (node.textContent || '').trim() : '';
+  }
+
+  function plainText(html) {
+    if (!html) return '';
+    try {
+      var doc = new DOMParser().parseFromString(html, 'text/html');
+      return ((doc.body && doc.body.textContent) || '').replace(/\s+/g, ' ').trim();
+    } catch (e) {
+      return html.replace(/\s+/g, ' ').trim();
+    }
+  }
+
+  function dayOf(el, name) {
+    var raw = textOf(el, name);
+    return raw ? raw.slice(0, 10) : '';
+  }
+
+  function render(entries) {
+    list.innerHTML = '';
+    if (!entries.length) {
+      var empty = document.createElement('li');
+      empty.className = 'state';
+      empty.textContent = '订阅源里还没有文章。';
+      list.appendChild(empty);
+      return;
+    }
+
+    entries.forEach(function (entry) {
+      var li = document.createElement('li');
+      li.className = 'item';
+
+      var date = document.createElement('div');
+      date.className = 'date';
+      date.textContent = dayOf(entry, 'published') || dayOf(entry, 'updated');
+
+      var a = document.createElement('a');
+      a.className = 'title';
+      var links = entry.getElementsByTagNameNS(NS, 'link');
+      a.href = links.length ? (links[0].getAttribute('href') || '#') : '#';
+      a.textContent = textOf(entry, 'title') || '无标题';
+
+      var p = document.createElement('p');
+      p.className = 'sum';
+      var summary = plainText(textOf(entry, 'summary'));
+      if (summary) {
+        p.textContent = summary.length > 115 ? summary.slice(0, 115) + '…' : summary;
+      } else {
+        p.style.display = 'none';
+      }
+
+      var chips = document.createElement('div');
+      chips.className = 'chips';
+      var cats = entry.getElementsByTagNameNS(NS, 'category');
+      for (var i = 0; i < cats.length; i++) {
+        var term = cats[i].getAttribute('term');
+        if (!term) continue;
+        var chip = document.createElement('span');
+        chip.className = 'chip';
+        chip.textContent = term;
+        chips.appendChild(chip);
+      }
+
+      li.appendChild(date);
+      li.appendChild(a);
+      li.appendChild(p);
+      if (chips.childNodes.length) li.appendChild(chips);
+      list.appendChild(li);
+    });
+  }
+
+  function fail(msg) {
+    list.innerHTML = '';
+    var li = document.createElement('li');
+    li.className = 'state';
+    li.textContent = msg || '订阅源读取失败，可直接把上面的地址添加到阅读器。';
+    list.appendChild(li);
+    countText.textContent = '共 0 篇文章';
+  }
+
+  fetch(FEED_PATH, { cache: 'no-cache' })
+    .then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.text();
+    })
+    .then(function (raw) {
+      var doc = new DOMParser().parseFromString(raw, 'application/xml');
+      if (doc.getElementsByTagName('parsererror').length) throw new Error('feed parse error');
+
+      var feed = doc.getElementsByTagNameNS(NS, 'feed')[0];
+      if (!feed) throw new Error('no feed');
+
+      var feedTitle = textOf(feed, 'title');
+      if (feedTitle) document.getElementById('siteTitle').textContent = feedTitle;
+
+      var entries = feed.getElementsByTagNameNS(NS, 'entry');
+      var arr = [];
+      for (var i = 0; i < entries.length; i++) arr.push(entries[i]);
+
+      var updated = dayOf(feed, 'updated');
+      countText.textContent = '共 ' + arr.length + ' 篇文章' + (updated ? ' · 最近更新 ' + updated : '');
+      render(arr);
+    })
+    .catch(function () {
+      fail();
+    });
+
+  copyBtn.addEventListener('click', function () {
+    var done = function () {
+      copyBtn.textContent = '已复制';
+      setTimeout(function () { copyBtn.textContent = '复制'; }, 1600);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(feedUrl).then(done, fallback);
+    } else {
+      fallback();
+    }
+    function fallback() {
+      var t = document.createElement('textarea');
+      t.value = feedUrl;
+      t.style.position = 'fixed';
+      t.style.opacity = '0';
+      document.body.appendChild(t);
+      t.select();
+      try { document.execCommand('copy'); done(); } catch (e) {}
+      document.body.removeChild(t);
+    }
+  });
+})();
+</script>
+</body>
+</html>
