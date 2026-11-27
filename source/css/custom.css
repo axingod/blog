@@ -134,6 +134,18 @@
   font-family: "YingxiongTi", "PingFang SC", "Microsoft YaHei", sans-serif !important;
   letter-spacing: 2px;
 }
+/* 文章大标题：压掉刺眼的纯白，改冷调米白，桌面端略放大 */
+#post-info h1.post-title {
+  color: #cbd5e4 !important;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.42), 0 0 2px rgba(0, 0, 0, 0.25);
+  letter-spacing: 1px !important;
+  text-wrap: balance;
+}
+@media (min-width: 769px) {
+  #post-info h1.post-title {
+    font-size: 3.2rem !important;
+  }
+}
 
 /* 首页分类卡：改成四项 + 「实用软件」紫色系 */
 #bannerGroup .categoryItem {
